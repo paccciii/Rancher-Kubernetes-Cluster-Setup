@@ -283,12 +283,14 @@ if not do this
 
 8. RKE config command and choosing the right kubernetes version while configuring cluster.yml file:
  
- kubernetes: rancher/hyperkube:v1.26.15-rancher1
+        kubernetes: rancher/hyperkube:v1.26.15-rancher1
  
  
 8a. RKE up command:
 
 run rke up command and your cluster will be up.
+              
+              rke up
 
 9. To communicate with your kubernetes cluster install kubectl tool:
  
@@ -304,28 +306,28 @@ run rke up command and your cluster will be up.
 
 11. Apply the patch at the end.
 
-kubectl -n cattle-system patch  deployments cattle-cluster-agent --patch '{
-    "spec": {
-        "template": {
-            "spec": {
-                "hostAliases": [
-                    {
-                      "hostnames":
-                      [
-                        "<your custom rancher mgmt website name>"
-                      ],
-                      "ip": "<ip address of rancher mgmt node>"
-                    },
-                    {
-                      "hostnames":
-                      [
-                        "<your custom rancher mgmt website name>"
-                      ],
-                      "ip": "<ip address of rancher mgmt node>"
-                    }
+              kubectl -n cattle-system patch  deployments cattle-cluster-agent --patch '{
+                  "spec": {
+                      "template": {
+                          "spec": {
+                              "hostAliases": [
+                                  {
+                                    "hostnames":
+                                    [
+                                      "<your custom rancher mgmt website name>"
+                                    ],
+                                    "ip": "<ip address of rancher mgmt node>"
+                                  },
+                                  {
+                                    "hostnames":
+                                    [
+                                      "<your custom rancher mgmt website name>"
+                                    ],
+                                    "ip": "<ip address of rancher mgmt node>"
+                                  }
  
-                ]
-            }
-        }
-    }
-}'
+                              ]
+                          }
+                      }
+                  }
+              }'
