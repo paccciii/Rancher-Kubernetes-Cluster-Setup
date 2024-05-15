@@ -1,5 +1,22 @@
-# rancher
-creating rancher ui management cluster and adding a downstream application cluster to it.
+Rancher Kubernetes Engine for Kubernetes cluster installation and Rancher Management UI:
+
+What is Rancher?
+
+Rancher is an open-source software platform designed to manage and deploy Kubernetes clusters in production environments. It provides a user-friendly interface for managing containerized applications across different Kubernetes clusters, whether they are hosted on-premises, in the cloud, or in hybrid environments.
+
+Why Rancher?
+
+Rancher simplifies the management and operation of Kubernetes clusters, making it easier for organizations to adopt and scale containerized applications in production environments while maintaining security, compliance, and operational efficiency.
+
+What are we doing here and Where are we doing this?
+This document helps us to setup kubernetes cluster in on-prem server running on Ubuntu 22.04. 
+In our setup process, we're utilizing Rancher Kubernetes Engine (RKE) version 1.4.xx to establish our Kubernetes cluster. To achieve this, we employ the 'rke config' command, where we input essential key values such as the number of nodes, their respective IP addresses, and their roles—whether they function as control plane, etcd, or worker nodes. Additionally, we specify the desired Kubernetes version for installation across these nodes.
+
+Once the cluster is created, our next step involves installing the Rancher management UI within one of the clusters. Subsequently, we proceed to create an additional cluster, designated as an application downstream cluster. Importantly, we integrate this newly created cluster into the Rancher management UI. This integration facilitates streamlined management and oversight.
+
+Finally, leveraging the Rancher management UI, we deploy applications onto the downstream cluster and initiate monitoring processes to ensure optimal performance and reliability
+
+Creating rancher ui management cluster and adding a downstream application cluster to it.
 
 THIS IS THE PRE-REQUISTE AND DOCKER 23.06 INSTALLATION PROCESS GUIDE:
 
